@@ -1,0 +1,27 @@
+<h1>Listing users_dbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users_dbs.each do |users_db| %>
+      <tr>
+        <td><%= users_db.username %></td>
+        <td><%= users_db.email %></td>
+        <td><%= link_to 'Show', users_db %></td>
+        <td><%= link_to 'Edit', edit_users_db_path(users_db) %></td>
+        <td><%= link_to 'Destroy', users_db, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Users db', new_users_db_path %>
